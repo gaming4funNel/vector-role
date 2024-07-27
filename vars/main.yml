@@ -1,5 +1,5 @@
-# vars file for vector_role
 ---
-vector_amd64_packages:
-  - vector
-vector_config_file: "vector.service.j2"
+# vars file for vector-role
+#vector_datadir: "/var/lib/vector"
+#vector_config: "/etc/vector/vector.toml"
+...

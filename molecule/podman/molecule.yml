@@ -3,19 +3,41 @@ dependency:
   name: galaxy
 driver:
   name: podman
+  options:
+    D: true
+    vv: true
 platforms:
-  - name: centos
-    image: docker.io/pycontribs/centos:7
+  - name: debian10
+    image: docker.io/pycontribs/debian:10
+    pre_build_image: true
+  - name: debian11
+    image: docker.io/pycontribs/debian:11
+    pre_build_image: true
+  - name: ubuntu
+    image: docker.io/pycontribs/ubuntu:latest
     pre_build_image: true
 provisioner:
   name: ansible
+  options:
+    D: true
+    vv: true
+  playbooks:
+    converge: ../resources/converge.yml
+    verify: ../resources/verify.yml
 verifier:
   name: ansible
 scenario:
-  test_sequence:
+  create_sequence:
+    - create
+  check_sequence:
+    - check
+  converge_sequence:
+    - converge
+  destroy_sequence:
     - destroy
+  test_sequence:
     - create
     - converge
-    - idempotence
     - verify
     - destroy
+...

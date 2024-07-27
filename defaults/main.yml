@@ -1,7 +1,12 @@
 ---
-# Version 
-vector_version: "0.31.0"
-# Dir for vector config
-vector_config: 
-# Dir for vector
-vector_config_dir: "{{ ansible_user_dir }}/vector_config"
+# defaults file for vector-role
+#vector_version: "0.28.0"
+vector_version: "0.25.2"
+#vector_version: "0.23.0"
+#vector_home: "/etc/vector/"
+#vector_test_dir: "{{ ansible_env.HOME }}/test"
+#clickhouse_host: "localhost"
+#clickhouse_port: "8123"
+#clickhouse_user: "default"
+#clickhouse_password: ""
+...
