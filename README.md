@@ -1,30 +1,31 @@
-Vector-role
+Role Name
 =========
-It is intended for installation on operating systems running the Vector service SystemD and basic configuration of tracking changes to LOG files with sending changes to Clickhouse
 
-Variables
-----------
-- **vector_version** - The version of the Vector software used. By default 0.28.0
+This role install Vector
 
-- **vector_test_dir**- is the directory for tracking LOG files.
 
-- **clickhouse_host:** - Clickhouse host for uploading metrics.
+Role Variables
+--------------
 
-- **clickhosue_port:** - Clickhouse port for uploading metrics.
+| vars | description |
+|------|----------------|
+| vector_version | Verson of Vector to install |
 
-- **clickhosue_user:** - A Clickhouse user with write permissions.
 
-- **clickhosue_password:** - Password of the authorized Clickhouse user.
+Example Playbook
+----------------
 
-Usage example
---------------------
-```yaml
-- name: Install and configure Vector
-  hosts: vector
-  become: true
-  vars:
-    vector_test_dir: "/var/log/test"
-    clickhouse_host: hostvars['clickhouse']['ansible_host']
-  roles:
-    - vector_role
-```
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+
+    - hosts: servers
+      roles:
+         - { role: vector }
+
+License
+-------
+
+MIT
+
+Author Information
+------------------
+

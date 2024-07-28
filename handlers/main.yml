@@ -1,12 +1,7 @@
 ---
-# handlers file for vector-role
-- name: Start vector service
+- name: Start Vector service
   become: true
   ansible.builtin.service:
-    name: "vector"
-    #pattern: "/usr/bin/vector"
-    #state: started
-    enabled: true
+    name: vector
     state: restarted
   when: ansible_facts.virtualization_type != "docker"
-...
