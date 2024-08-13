@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                git branch: 'main', credentialsId: 'vm2_vagrant_git', url: 'git@github.com:gaming4funNel/vector-role.git'
+                git branch: 'main', credentialsId: 'e80b5742-92b1-4d3a-8ba4-564ecdfb9ba3', url: 'https://github.com/gaming4funNel/vector-role.git'
                 }
             }
         stage('install apps') {
@@ -16,7 +16,7 @@ pipeline {
         stage('molecule test') {
             steps {
                 sh "molecule --version"
-            //    sh "molecule test -s ubuntu"
+                sh "molecule test"
             }
         }
     }
