@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                git branch: 'main', credentialsId: 'vm2_vagrant_git', url: 'git@github.com:AirDRoN-lab/ansible-vector-role.git'
+                git branch: 'main', credentialsId: 'vm2_vagrant_git', url: 'git@github.com:gaming4funNel/vector-role.git'
                 }
             }
         stage('install apps') {
