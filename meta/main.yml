@@ -1,11 +1,19 @@
 galaxy_info:
-  role_name: vector_role
-  namespace: ols
-  description: Role for installation and managing Vector
-  license: license (GPL-2.0-or-later, MIT, etc)
-  min_ansible_version: "2.1"
+  role_name: vector
+  namespace: airdron_lab
+  author: DG
+  description: Role for installation Vector
+  company: Home
+
+  license: MIT
+
   platforms:
-    - name: EL
+    - name: ubuntu
       versions:
-        - "7"
+        - focal
+
+  min_ansible_version: 2.8
+  galaxy_tags: 
+   - vector
+
 dependencies: []

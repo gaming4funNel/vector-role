@@ -1,17 +1,22 @@
 pipeline {
     agent {
-        label 'ansible'
+            label 'linux'
     }
-
     stages {
-        stage('git') {
+        stage('git clone') {
             steps {
-                git branch: 'master', credentialsId: 'Muroway_github', url: 'https://github.com/Muroway/vector-role.git'
+                git branch: 'main', credentialsId: 'vm2_vagrant_git', url: 'git@github.com:AirDRoN-lab/ansible-vector-role.git'
+                }
+            }
+        stage('install apps') {
+            steps {
+                sh "pip3 install  'molecule==3.5.2' 'molecule_docker'"
             }
         }
-        stage('Molecule test in docker') {
+        stage('molecule test') {
             steps {
-                sh 'molecule test -s docker'
+                sh "molecule --version"
+            //    sh "molecule test -s ubuntu"
             }
         }
     }
