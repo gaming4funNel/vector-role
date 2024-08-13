@@ -1,7 +1,3 @@
 ---
-# Version 
-vector_version: "0.31.0"
-# Dir for vector config
-vector_config: 
-# Dir for vector
-vector_config_dir: "{{ ansible_user_dir }}/vector_config"
+# defaults file for vector-role 
+vector_conf_dir: "/etc/vector/"
