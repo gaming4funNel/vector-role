@@ -1,30 +1,25 @@
-Role Name
+Vector
 =========
 
-This role install Vector
+Роль предназначена для установки и настройки ПО Vector для сбора и отправки логов.
 
 
 Role Variables
 --------------
 
-| vars | description |
-|------|----------------|
-| vector_version | Verson of Vector to install |
+| variables | description |
+|--------|-----------|
+| vector_version | версия устанавляемого ПО |
 
 
 Example Playbook
 ----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: vector }
-
-License
--------
-
-MIT
+```
+- name: Install Vector
+  hosts: all
+  roles:
+    - vector-role
+```
 
 Author Information
 ------------------

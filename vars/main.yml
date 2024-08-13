@@ -1,2 +1,5 @@
+# vars file for vector_role
 ---
-# vars file for vector-role
+vector_amd64_packages:
+  - vector
+vector_config_file: "vector.service.j2"
